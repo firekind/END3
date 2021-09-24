@@ -1,5 +1,7 @@
 # Session 1 - Very Basics
 
+> **This assignment was done individually.**
+
 ## Assignment
 
 Rewrite the colab file and:
@@ -71,9 +73,11 @@ Some of the different ways of calculating the loss of a neural network are: mean
 <img src="res/simple-network.png">
 </p>
 
-We have to calculate the change in the weight $w_1$ with respect to the loss $L$. As seen, loss $L$ is calulated from the output $O$, which is in turn comes from the output of the hidden layer (after activation) which in turn comes from the input node multiplied with $w_1$. Also, while calculating the gradient, the weight $w_2$ is assumed to be constant, as per partial differentiation rules. Mathematically,
+We have to calculate the change in the weight *w<sub>1</sub>* with respect to the loss *L*. As seen, loss *L* is calulated from the output *O*, which is in turn comes from the output of the hidden layer (after activation) which in turn comes from the input node multiplied with *w<sub>1</sub>*. Also, while calculating the gradient, the weight *w<sub>2</sub>* is assumed to be constant, as per partial differentiation rules. Mathematically,
 
-$$\frac{\partial{L}}{\partial{w_1}} = \frac{\partial{L}}{\partial{O^a}} \frac{\partial{O^a}}{\partial{O}} \frac{\partial{O}}{\partial{H_1^a}} \frac{\partial{H_1^a}}{\partial{H_1}} \frac{\partial{H_1}}{\partial{w_1}}$$
+<p align="center">
+<img src="https://latex.codecogs.com/svg.image?\frac{\partial&space;L}{\partial&space;w_1}=\frac{\partial&space;L}{\partial&space;O^a}&space;\frac{\partial&space;O^a}{\partial&space;O}&space;\frac{\partial&space;O}{\partial&space;H_1^a}&space;\frac{\partial&space;H_1^a}{\partial&space;H_1}&space;\frac{\partial&space;H_1}{\partial&space;w_1}" title="\frac{\partial L}{\partial w_1}=\frac{\partial L}{\partial O^a} \frac{\partial O^a}{\partial O} \frac{\partial O}{\partial H_1^a} \frac{\partial H_1^a}{\partial H_1} \frac{\partial H_1}{\partial w_1}" />
+</p>
 
-There is this "chain" or "link" between $w_1$ and the final loss $L$. This chain (as shown by the equation above) is literally the chain rule in calculus, and the answer to this question.
+There is this "chain" or "link" between *w<sub>1</sub>* and the final loss *L*. This chain (as shown by the equation above) is literally the chain rule in calculus, and the answer to this question.
 
