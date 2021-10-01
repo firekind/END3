@@ -69,11 +69,15 @@ For backprop, the gist of it is this: find the "path" to get to the value, and t
 
 To understand this better, consider this: calculating gradient of *w5* w.r.t *E_total*. To get to *E_total* from *w5*, there is only one "path", which is from *w5* to *o1*, from *o1* to *out_o1* and from *out_o1* to *E_total*. Writing this same exact thing in terms of chain rule,
 
-$$ \frac{\partial E\_total}{\partial w5} = \frac{\partial E\_total}{\partial out\_o1} \frac{\partial out\_o1}{\partial o1} \frac{\partial o1}{\partial w5} $$
+<p align="center">
+<img src="https://latex.codecogs.com/svg.image?\frac{\partial&space;E\_total}{\partial&space;w5}&space;=&space;\frac{\partial&space;E\_total}{\partial&space;out\_o1}&space;\frac{\partial&space;out\_o1}{\partial&space;o1}&space;\frac{\partial&space;o1}{\partial&space;w5}"/>
+</p>
 
 taking it a step further, to calculate the gradient of *w1* w.r.t *E_total*, there are two paths, which is from *w1* to *h1*, *h1* to *out_h1*, *out_h1* to *o1*, from *o1* to *out_o1* and from *out_o1* to *E_total*, and *w1* to *h1*, *h1* to *out_h1*, *out_h1* to *o2*, from *o2* to *out_o2* and from *out_o2* to *E_total*. Translating this mess into chain rule,
 
-$$ \frac{\partial E\_total}{\partial w1} = \frac{\partial E\_total}{\partial out\_o1} \frac{\partial out\_o1}{\partial o1} \frac{\partial o1}{\partial out\_h1} \frac{\partial out\_h1}{\partial h1} \frac{\partial h1}{\partial w1} + \frac{\partial E\_total}{\partial out\_o2} \frac{\partial out\_o2}{\partial o2} \frac{\partial o2}{\partial out\_h1} \frac{\partial out\_h1}{\partial h1} \frac{\partial h1}{\partial w1}$$
+<p align="center">
+<img src="https://latex.codecogs.com/svg.image?\frac{\partial&space;E\_total}{\partial&space;w1}&space;=&space;\frac{\partial&space;E\_total}{\partial&space;out\_o1}&space;\frac{\partial&space;out\_o1}{\partial&space;o1}&space;\frac{\partial&space;o1}{\partial&space;out\_h1}&space;\frac{\partial&space;out\_h1}{\partial&space;h1}&space;\frac{\partial&space;h1}{\partial&space;w1}&space;&plus;&space;\frac{\partial&space;E\_total}{\partial&space;out\_o2}&space;\frac{\partial&space;out\_o2}{\partial&space;o2}&space;\frac{\partial&space;o2}{\partial&space;out\_h1}&space;\frac{\partial&space;out\_h1}{\partial&space;h1}&space;\frac{\partial&space;h1}{\partial&space;w1}"/>
+</p>
 
 For the most part, the values of the partial derivatives can be obtained by simply differentiating the forward prop equations, which will directly yield a result. Keep in mind that while performing partial differentiation w.r.t a weight, the other weights are kept constant.
 
