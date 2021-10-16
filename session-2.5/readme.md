@@ -152,9 +152,14 @@ The accuracy metric from torchmetrics, according to the [code](https://github.co
 <img src="res/training-logs.png">
 </p>
 
-| Validation loss||
-| ----------- | ----------- |
-| <img src="res/validation-loss.png">||
+<table>
+    <tr>
+        <td><b>Validation loss</b></td>
+    </tr>
+    <tr>
+        <td><img src="res/validation-loss.png"></td>
+    </tr>
+</table>
 
 | Validation accuracy: MNIST|Validation accuracy: Sum|
 | ----------- | ----------- |
