@@ -165,3 +165,5 @@ The accuracy metric from torchmetrics, according to the [code](https://github.co
 <p align="center">
 <img src="res/results.png">
 </p>
+
+> Quick Note: The training logs in the notebook look weird / incomplete, because of how tqdm and pytorch lightning prints logs. Also, most of the code is written in a self documenting manner.
