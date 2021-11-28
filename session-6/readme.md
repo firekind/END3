@@ -169,6 +169,8 @@ The training logs can be viewed on tensorboard, the links are given above. As fo
 
 ### Quora Similar Questions
 
+#### Dataset
+
 This dataset is also a tab separated file, so pandas it is.
 
 ```python
@@ -302,8 +304,9 @@ class QuoraDuplicateQuestions(Dataset):
 
 The training logs can be viewed on tensorboard, the links are given above. As for the stdout logs, pytorch lightning doesnt have a nice way of showing logs, but the logs can be seen in the notebook (again, link's at the top).
 
-### Caveats
+### Notes
 
 1. Tried using `BucketIterator` with the new API, didn't work.
 2. Both encoder and decoder uses the same optimizer, for some reason couldnt get two optimizers working with pytorch lightning.
 3. Changing the structure of the encoder (adding more GRU layers, etc) affects the decoder big time (with regards to implemetation). Not sure if that is expected or not.
+4. Not having the batch dimension as the fist dimension is weird, but useful while writing `forward` methods.
