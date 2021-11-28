@@ -1,5 +1,7 @@
 # RNN/LSTM With Attention Mechanism
 
+> This assignment was done individually.
+
 ## Assignment
 
 1. Train model we wrote in the class on the following two datasets taken from this link (Links to an external site.): 
